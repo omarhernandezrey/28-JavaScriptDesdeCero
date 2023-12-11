@@ -36,3 +36,45 @@ const hobbie2 = 'leer'
 const hobbie3 = 'estudiar'
 const hobbies = 'Mis hobbies son: '.concat(hobbie1, ', ', hobbie2, ', ', hobbie3, '.');
 console.log(hobbies);
+
+// Caracteres de escape
+//const whatDoitIdo = 'I'm software Engineer'
+
+// 1. Escape alternativo
+const escapeAlternativo = "I'm software Engineer"
+
+
+// 2. Barra inverida
+const escapeBarraInvertida='I\'m Software Engineer'
+
+
+// 3. Template literals
+const escapeComillaInvertida=`I\'m Software Engineer`
+
+//Escritura de Strings Largos
+/*
+Las rosas son rojas,
+Las violetas son azules,
+Carecter inespererado,
+en la liena 86.
+*/
+
+const  poema = 'Las rosas son rojas,\n' +
+                'Las violetas son azules,\n' +
+                'Carecter inespererado,\n' +
+                'en la liena 86.'
+
+console.log(poema);
+
+const  poema2 = 'Las rosas son rojas,\n\
+Las violetas son azules,\n\
+Carecter inespererado,\n\
+en la liena 86.'
+console.log(poema2);
+
+
+const  poema3 = `Las rosas son rojas,\n\
+Las violetas son azules,\n\
+Carecter inespererado,\n\
+en la liena 86.`
+console.log(poema3);
