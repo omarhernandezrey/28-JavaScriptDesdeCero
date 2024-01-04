@@ -1,18 +1,18 @@
-// Methods that DO NOT modify the original array (Immutability).
+// Métodos que NO modifican el array original (Inmutabilidad).
 
 // every()
-// The "every" method checks if all elements in the array satisfy a given condition.
-const ages = [21, 25, 30, 19, 22];
+// El método "every" verifica si todos los elementos en el array cumplen una condición dada.
+const edades = [21, 25, 30, 19, 22];
 
-// Check if all ages in the array are greater than 20.
-const allAreAdults = ages.every(age => age > 20);
+// Verifica si todas las edades en el array son mayores que 20.
+const todosSonAdultos = edades.every(edad => edad > 20);
 
-console.log(ages); // [21, 25, 30, 19, 22]
-console.log(allAreAdults); // false (not all ages are greater than 20)
+console.log(edades); // [21, 25, 30, 19, 22]
+console.log(todosSonAdultos); // false (no todas las edades son mayores que 20)
 
 // some()
-// The "some" method checks if at least one element in the array satisfies a given condition.
-const atLeastOneIsOver30 = ages.some(age => age > 30);
+// El método "some" verifica si al menos un elemento en el array cumple una condición dada.
+const alMenosUnoMayorDe30 = edades.some(edad => edad > 30);
 
-console.log(ages); // [21, 25, 30, 19, 22]
-console.log(atLeastOneIsOver30); // true (there is at least one age greater than 30)
+console.log(edades); // [21, 25, 30, 19, 22]
+console.log(alMenosUnoMayorDe30); // true (hay al menos una edad mayor que 30)
