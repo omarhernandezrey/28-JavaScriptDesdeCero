@@ -33,3 +33,36 @@ console.log("Transacciones de Compras: ", purchaseTransaction);
 // Salida: Transacciones de Compras: [ { id: 1, description: 'Compra de comestibles', amount: -50 },
 //                                   { id: 3, description: 'Pago de factura de servicios', amount: -100 },
 //                                   { id: 4, description: 'Compra en línea', amount: -30 } ]
+//-------------------------------------------------------------------------------------------------------//
+
+// 4. Encontrar una Transacción por Descripción
+
+// Utilizando el método "find" para encontrar la primera transacción con una descripción específica.
+const specificTransaction = transactions.find(transaction => transaction.description === 'Compra en línea');
+console.log("La transacción con descripción 'Compra en línea': ", specificTransaction);
+// Salida: La transacción con descripción 'Compra en línea': { id: 4, description: 'Compra en línea', amount: -30 }
+
+// 5. Encontrar el Índice de una Transacción por Monto
+
+// Utilizando el método "findIndex" para encontrar el índice de la primera transacción con un monto específico.
+const indexTransactionWithAmount = transactions.findIndex(transaction => transaction.amount === -30);
+console.log('Índice de la transacción con monto -30: ', indexTransactionWithAmount);
+// Salida: Índice de la transacción con monto -30: 3
+
+// 6. Actualizar Descripciones de Transacciones
+
+// Utilizando el método "forEach" para actualizar las descripciones de las transacciones (agregando 'Expense' o 'Income' según el monto).
+transactions.forEach(transaction => {
+    if (transaction.amount < 0) {
+        transaction.description += ` Gasto: ${transaction.description}`;
+    } else {
+        transaction.description += ` Ingreso: ${transaction.description}`;
+    }
+});
+
+console.log('Lista actualizada de las transacciones: \n', transactions);
+// Salida: Lista actualizada de las transacciones:
+// [ { id: 1, description: 'Compra de comestibles Gasto: ', amount: -50 },
+//   { id: 2, description: 'Depósito de salario Ingreso: ', amount: 2000 },
+//   { id: 3, description: 'Pago de factura de servicios Gasto: ', amount: -100 },
+//   { id: 4, description: 'Compra en línea Gasto: ', amount: -30 } ]
