@@ -36,13 +36,21 @@ function usuarioExistente(userName, passWord) {
     for (let i = 0; i < usersDatabase.length; i++) {
         // Condición para verificar si el usuario y la contraseña coinciden
         if (usersDatabase[i].username === userName && usersDatabase[i].password === passWord) {
-            console.log("Es correcto"); // Mensaje si la autenticación es exitosa
-            return; // Se añadió para salir de la función después de encontrar una coincidencia
-        } else {
-            console.log("No es correcto"); // Mensaje si la autenticación falla después de recorrer toda la base de datos
+            return true; // Devuelve true si la autenticación es exitosa
         }
+    }
+    return false; // Devuelve false si no se encuentra coincidencia
+}
+
+// Función para iniciar sesión
+function signIn(userName, passWord) {
+    if (usuarioExistente(userName, passWord)) {
+        alert(`Bienvenido a tu cuenta, ${userName}`);
+        console.log(usersTimeline); // Muestra el timeline si la autenticación es exitosa
+    } else {
+        alert('Usuario o Contraseña incorrecta'); // Muestra un mensaje de error si la autenticación falla
     }
 }
 
-// Llamada a la función para verificar el usuario
-usuarioExistente(userName, passWord);
+// Llamada a la función para iniciar sesión
+signIn(userName, passWord);
